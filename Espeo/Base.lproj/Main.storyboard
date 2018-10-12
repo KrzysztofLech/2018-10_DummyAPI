@@ -16,9 +16,41 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tKK-TU-PzV">
+                                <rect key="frame" x="0.0" y="84" width="414" height="812"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="0Ot-Zs-mn2"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xrC-xP-HDx"/>
+                                </connections>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Documents: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WI0-fY-eKq">
+                                <rect key="frame" x="0.0" y="44" width="414" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="m7m-QX-1dE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="tKK-TU-PzV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3zp-D7-qcX"/>
+                            <constraint firstItem="WI0-fY-eKq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="PVD-xR-gBO"/>
+                            <constraint firstAttribute="bottom" secondItem="tKK-TU-PzV" secondAttribute="bottom" id="ZNy-CH-O9o"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tKK-TU-PzV" secondAttribute="trailing" id="blv-KM-v6B"/>
+                            <constraint firstItem="WI0-fY-eKq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="gmb-jr-ufP"/>
+                            <constraint firstAttribute="trailing" secondItem="WI0-fY-eKq" secondAttribute="trailing" id="q6N-XA-2UO"/>
+                            <constraint firstItem="tKK-TU-PzV" firstAttribute="top" secondItem="WI0-fY-eKq" secondAttribute="bottom" id="vEd-EY-XTB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="documentsCounterLabel" destination="WI0-fY-eKq" id="jXd-G9-hSH"/>
+                        <outlet property="tableView" destination="tKK-TU-PzV" id="5hE-8t-opB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

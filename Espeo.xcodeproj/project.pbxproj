@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		017AF35829C39A307A40C693 /* Pods_Espeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9180AAC783E407BB5C6104 /* Pods_Espeo.framework */; };
 		6BFD5E0C2170CED400611E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0B2170CED400611E7C /* AppDelegate.swift */; };
-		6BFD5E0E2170CED400611E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0D2170CED400611E7C /* ViewController.swift */; };
 		6BFD5E112170CED400611E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0F2170CED400611E7C /* Main.storyboard */; };
 		6BFD5E132170CED600611E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E122170CED600611E7C /* Assets.xcassets */; };
 		6BFD5E162170CED600611E7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E142170CED600611E7C /* LaunchScreen.storyboard */; };
@@ -20,7 +19,6 @@
 		3A0E0A575AD9EFC5F0576229 /* Pods-Espeo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Espeo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Espeo/Pods-Espeo.release.xcconfig"; sourceTree = "<group>"; };
 		6BFD5E082170CED400611E7C /* Espeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Espeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFD5E0B2170CED400611E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6BFD5E0D2170CED400611E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6BFD5E102170CED400611E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6BFD5E122170CED600611E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BFD5E152170CED600611E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -40,6 +38,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BC5FE4A2170D67100C7FE05 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6BC5FE4B2170D67F00C7FE05 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6BC5FE4C2170D69000C7FE05 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6BC5FE4D2170D69E00C7FE05 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6BC5FE4E2170D6AF00C7FE05 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				6BC5FE502170D6C600C7FE05 /* Extensions */,
+				6BC5FE4F2170D6BC00C7FE05 /* Services */,
+				6BC5FE512170D6D300C7FE05 /* Helpers */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		6BC5FE4F2170D6BC00C7FE05 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6BC5FE502170D6C600C7FE05 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6BC5FE512170D6D300C7FE05 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		6BFD5DFF2170CED400611E7C = {
 			isa = PBXGroup;
 			children = (
@@ -62,8 +119,12 @@
 			isa = PBXGroup;
 			children = (
 				6BFD5E0B2170CED400611E7C /* AppDelegate.swift */,
-				6BFD5E0D2170CED400611E7C /* ViewController.swift */,
 				6BFD5E0F2170CED400611E7C /* Main.storyboard */,
+				6BC5FE4A2170D67100C7FE05 /* Model */,
+				6BC5FE4B2170D67F00C7FE05 /* ViewModel */,
+				6BC5FE4C2170D69000C7FE05 /* View */,
+				6BC5FE4D2170D69E00C7FE05 /* ViewControllers */,
+				6BC5FE4E2170D6AF00C7FE05 /* Other */,
 				6BFD5E122170CED600611E7C /* Assets.xcassets */,
 				6BFD5E142170CED600611E7C /* LaunchScreen.storyboard */,
 				6BFD5E172170CED600611E7C /* Info.plist */,
@@ -202,7 +263,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BFD5E0E2170CED400611E7C /* ViewController.swift in Sources */,
 				6BFD5E0C2170CED400611E7C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -353,7 +413,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGBQYC9Y9;
 				INFOPLIST_FILE = Espeo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kl.24abc.pl.Espeo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -369,7 +432,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGBQYC9Y9;
 				INFOPLIST_FILE = Espeo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = kl.24abc.pl.Espeo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

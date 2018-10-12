@@ -12,8 +12,17 @@ typealias Completion = (()->())
 
 class DocumentViewModel {
     
+    // MARK: - Private Properties
+    
     private let apiService: APIService
     private var documents: [Document] = []
+    
+    
+    // MARK: - Public Properties
+    
+    var documentCount: Int {
+        return documents.count
+    }
     
     
     // MARK: - Init
@@ -34,5 +43,6 @@ class DocumentViewModel {
             }
         }
     }
+
     
 }

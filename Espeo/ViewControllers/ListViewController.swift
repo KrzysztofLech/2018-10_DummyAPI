@@ -38,8 +38,9 @@ class ListViewController: UIViewController {
     //MARK: - Other Methods
     
     private func initViewModel() {
-        viewModel.getDocuments {
-            
+        viewModel.getDocuments { [weak self] in
+            self?.tableView.reloadData()
+            self?.documentsCounterLabel.text = String(format: "Documents: %i", self?.viewModel.documentCount ?? 0)
         }
     }
 }
@@ -49,7 +50,7 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return viewModel.documentCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

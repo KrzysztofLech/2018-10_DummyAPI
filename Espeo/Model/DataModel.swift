@@ -1,5 +1,5 @@
 //
-//  Document.swift
+//  DataModel.swift
 //  Espeo
 //
 //  Created by Krzysztof Lech on 12/10/2018.
@@ -7,6 +7,10 @@
 //
 
 import Foundation
+
+struct Documents: Decodable {
+    let documents: [Document]
+}
 
 struct Document: Decodable {
     let id:        Int

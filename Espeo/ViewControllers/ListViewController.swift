@@ -9,10 +9,20 @@
 import UIKit
 
 class ListViewController: UIViewController {
+    
+    private lazy var viewModel: DocumentViewModel = {
+        return DocumentViewModel()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        initViewModel()
+    }
+    
+    private func initViewModel() {
+        viewModel.getDocuments {
+            
+        }
     }
 }

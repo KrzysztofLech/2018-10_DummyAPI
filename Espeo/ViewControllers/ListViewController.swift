@@ -29,6 +29,9 @@ class ListViewController: UIViewController {
         super.viewDidLoad()
         
         initViewModel()
+        
+        tableView.register(UINib(nibName: DocumentTableViewCell.toString(), bundle: nil),
+                           forCellReuseIdentifier: DocumentTableViewCell.toString())
     }
     
     
@@ -50,7 +53,12 @@ extension ListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTableViewCell.toString(),
+                                                       for: indexPath) as? DocumentTableViewCell else { return UITableViewCell() }
+        
+        // konfigurujemy celkę
+        
+        return cell
     }
     
     

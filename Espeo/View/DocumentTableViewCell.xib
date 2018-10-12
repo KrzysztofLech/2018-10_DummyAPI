@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="DocumentTableViewCell" customModule="Espeo" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="370" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="370" height="99.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyz-mW-UaR" userLabel="Container View">
+                        <rect key="frame" x="0.0" y="0.0" width="370" height="100.5"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-Cv-ovu">
+                                <rect key="frame" x="40" y="40.5" width="20" height="20"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kha-Tx-u76">
+                                <rect key="frame" x="0.0" y="0.0" width="100" height="100.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1OU-2o-hAs"/>
+                                    <constraint firstAttribute="width" constant="100" id="9pd-75-lGP"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dff-bY-hif">
+                                <rect key="frame" x="110" y="38.5" width="240" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="20"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kha-Tx-u76" firstAttribute="leading" secondItem="nyz-mW-UaR" secondAttribute="leading" id="8YT-Ss-PFv"/>
+                            <constraint firstItem="RiY-Cv-ovu" firstAttribute="centerY" secondItem="kha-Tx-u76" secondAttribute="centerY" id="Kpg-Rb-cbQ"/>
+                            <constraint firstAttribute="trailing" secondItem="Dff-bY-hif" secondAttribute="trailing" constant="20" id="OlL-W7-zbX"/>
+                            <constraint firstAttribute="bottom" secondItem="kha-Tx-u76" secondAttribute="bottom" id="UBz-hM-29p"/>
+                            <constraint firstItem="kha-Tx-u76" firstAttribute="top" secondItem="nyz-mW-UaR" secondAttribute="top" id="ew6-1e-Zy8"/>
+                            <constraint firstItem="kha-Tx-u76" firstAttribute="centerY" secondItem="nyz-mW-UaR" secondAttribute="centerY" id="exA-4O-2SU"/>
+                            <constraint firstItem="RiY-Cv-ovu" firstAttribute="centerX" secondItem="kha-Tx-u76" secondAttribute="centerX" id="mvs-rd-X8Y"/>
+                            <constraint firstItem="Dff-bY-hif" firstAttribute="centerY" secondItem="nyz-mW-UaR" secondAttribute="centerY" id="sDH-ZY-L7p"/>
+                            <constraint firstItem="Dff-bY-hif" firstAttribute="leading" secondItem="kha-Tx-u76" secondAttribute="trailing" constant="10" id="sie-No-oQb"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nyz-mW-UaR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KRn-iD-wIK"/>
+                    <constraint firstAttribute="bottom" secondItem="nyz-mW-UaR" secondAttribute="bottom" id="ZPa-hh-n8y"/>
+                    <constraint firstAttribute="trailing" secondItem="nyz-mW-UaR" secondAttribute="trailing" id="bHD-Zd-eUc"/>
+                    <constraint firstItem="nyz-mW-UaR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="cXn-i6-Nhz"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="activityIndicator" destination="RiY-Cv-ovu" id="0v0-EF-RhO"/>
+                <outlet property="thumbnailImageView" destination="kha-Tx-u76" id="OjN-7H-LDu"/>
+                <outlet property="titleLabel" destination="Dff-bY-hif" id="ttS-eq-D2H"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+</document>

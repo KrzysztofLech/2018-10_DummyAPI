@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		017AF35829C39A307A40C693 /* Pods_Espeo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA9180AAC783E407BB5C6104 /* Pods_Espeo.framework */; };
 		6BFD5E0C2170CED400611E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0B2170CED400611E7C /* AppDelegate.swift */; };
 		6BFD5E0E2170CED400611E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0D2170CED400611E7C /* ViewController.swift */; };
 		6BFD5E112170CED400611E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0F2170CED400611E7C /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10D0892CCD4E289087E59CE5 /* Pods-Espeo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Espeo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Espeo/Pods-Espeo.debug.xcconfig"; sourceTree = "<group>"; };
+		3A0E0A575AD9EFC5F0576229 /* Pods-Espeo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Espeo.release.xcconfig"; path = "Pods/Target Support Files/Pods-Espeo/Pods-Espeo.release.xcconfig"; sourceTree = "<group>"; };
 		6BFD5E082170CED400611E7C /* Espeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Espeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFD5E0B2170CED400611E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BFD5E0D2170CED400611E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		6BFD5E122170CED600611E7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6BFD5E152170CED600611E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6BFD5E172170CED600611E7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA9180AAC783E407BB5C6104 /* Pods_Espeo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Espeo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				017AF35829C39A307A40C693 /* Pods_Espeo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				6BFD5E0A2170CED400611E7C /* Espeo */,
 				6BFD5E092170CED400611E7C /* Products */,
+				951E34FC51F4256376045530 /* Pods */,
+				8361A6B8399730AFA4F6F60A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = Espeo;
 			sourceTree = "<group>";
 		};
+		8361A6B8399730AFA4F6F60A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EA9180AAC783E407BB5C6104 /* Pods_Espeo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		951E34FC51F4256376045530 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				10D0892CCD4E289087E59CE5 /* Pods-Espeo.debug.xcconfig */,
+				3A0E0A575AD9EFC5F0576229 /* Pods-Espeo.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6BFD5E1A2170CED600611E7C /* Build configuration list for PBXNativeTarget "Espeo" */;
 			buildPhases = (
+				E34595F4A0ABCE9C323FEA67 /* [CP] Check Pods Manifest.lock */,
 				6BFD5E042170CED400611E7C /* Sources */,
 				6BFD5E052170CED400611E7C /* Frameworks */,
 				6BFD5E062170CED400611E7C /* Resources */,
+				D069127695FD6F9764B07491 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		D069127695FD6F9764B07491 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Espeo/Pods-Espeo-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReachabilitySwift/Reachability.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Reachability.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Espeo/Pods-Espeo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34595F4A0ABCE9C323FEA67 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Espeo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		6BFD5E042170CED400611E7C /* Sources */ = {
@@ -280,15 +347,13 @@
 		};
 		6BFD5E1B2170CED600611E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D0892CCD4E289087E59CE5 /* Pods-Espeo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGBQYC9Y9;
 				INFOPLIST_FILE = Espeo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kl.24abc.pl.Espeo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -298,15 +363,13 @@
 		};
 		6BFD5E1C2170CED600611E7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A0E0A575AD9EFC5F0576229 /* Pods-Espeo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 2UGBQYC9Y9;
 				INFOPLIST_FILE = Espeo/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kl.24abc.pl.Espeo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

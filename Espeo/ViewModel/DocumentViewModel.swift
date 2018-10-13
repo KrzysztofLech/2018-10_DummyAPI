@@ -20,9 +20,11 @@ class DocumentViewModel {
     
     // MARK: - Public Properties
     
-    var documentCount: Int {
+    var documentsCount: Int {
         return documents.count
     }
+    
+    var documentsCategories: [DocCategory] = []
     
     
     // MARK: - Init
@@ -35,14 +37,34 @@ class DocumentViewModel {
     // MARK: - Networking
     
     func getDocuments(completion: @escaping Completion) {
-        apiService.getDocuments { (documents) in
-            self.documents = documents
+        apiService.getDocuments { [weak self] (documents) in
+            self?.documents = documents
+            self?.divideDocumentsDataIntoCategories()
+            print("Downloaded: \(self?.documents.count ?? 0) documents")
             DispatchQueue.main.async {
                 completion()
-                print("Downloaded: \(self.documents.count) documents")
             }
         }
     }
-
     
+    
+    // MARK: - Data Model Methods
+    
+    private func divideDocumentsDataIntoCategories() {
+        documentsCategories.removeAll()
+        
+        let categoryNames: Set<String> = {
+            var set = Set<String>()
+            for doc in documents { set.insert(doc.category) }
+            return set
+        }()
+        print(categoryNames)
+        
+        for categoryName in categoryNames {
+            let categoryDocs = documents.filter { $0.category == categoryName }
+            let docCategory = DocCategory(name: categoryName, documents: categoryDocs)
+            documentsCategories.append(docCategory)
+            print(categoryDocs.count, categoryName)
+        }
+    }
 }

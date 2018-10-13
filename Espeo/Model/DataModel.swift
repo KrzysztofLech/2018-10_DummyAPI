@@ -25,3 +25,13 @@ struct Document: Decodable {
         case thumbnail = "thumbnailImg"
     }
 }
+
+class DocCategory {
+    let name: String
+    var items: [Document]
+    
+    init(name: String, documents: [Document]) {
+        self.name = name
+        self.items = documents
+    }
+}

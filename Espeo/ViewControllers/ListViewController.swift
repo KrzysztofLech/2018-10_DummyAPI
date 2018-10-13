@@ -19,7 +19,7 @@ class ListViewController: UIViewController {
     //MARK: - Properties
     
     private lazy var viewModel: DocumentViewModel = {
-        return DocumentViewModel()
+        return DocumentViewModel(apiService: APIService())
     }()
     
     
@@ -40,7 +40,7 @@ class ListViewController: UIViewController {
     private func initViewModel() {
         viewModel.getDocuments { [weak self] in
             self?.tableView.reloadData()
-            self?.documentsCounterLabel.text = String(format: "Documents: %i", self?.viewModel.documentCount ?? 0)
+            self?.documentsCounterLabel.text = String(format: "Documents: %i", self?.viewModel.documentsCount ?? 0)
         }
     }
 }
@@ -49,8 +49,21 @@ class ListViewController: UIViewController {
 //MARK: - TableView Data Source Methods
 
 extension ListViewController: UITableViewDataSource {
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.documentsCategories.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let categoryName = viewModel.documentsCategories[section].name
+        let categoryCount = viewModel.documentsCategories[section].items.count
+        let headerTitle = String(format: "%@ (%i)", arguments: [categoryName, categoryCount])
+        return headerTitle
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.documentCount
+        let rows = viewModel.documentsCategories[section].items.count
+        return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,8 +74,6 @@ extension ListViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 

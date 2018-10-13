@@ -65,7 +65,6 @@ class DocumentDetailsViewModel {
     func getDocumentDetails(id: Int, completion: @escaping Completion) {
         apiService.getDocumentDetails(id: id) { [weak self] (documentDetails) in
             self?.documentDetails = documentDetails
-            print(documentDetails)
             
             DispatchQueue.main.async {
                 completion()

@@ -35,3 +35,21 @@ class DocCategory {
         self.items = documents
     }
 }
+
+struct DocumentDetails: Decodable {
+    let category: String
+    let author:   String
+    let title:    String
+    let text:     String
+    let created:  String
+    let imageURL: String
+
+    enum CodingKeys: String, CodingKey {
+        case category
+        case author
+        case title
+        case text
+        case created
+        case imageURL = "headerImg"
+    }
+}

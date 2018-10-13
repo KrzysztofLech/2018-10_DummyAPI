@@ -50,6 +50,8 @@ class ListViewController: UIViewController {
 
 extension ListViewController: UITableViewDataSource {
 
+    // Sections
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return viewModel.documentsCategories.count
     }
@@ -60,6 +62,18 @@ extension ListViewController: UITableViewDataSource {
         let headerTitle = String(format: "%@ (%i)", arguments: [categoryName, categoryCount])
         return headerTitle
     }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let header = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = UIColor.black
+            header.textLabel?.textColor = UIColor.lightGray
+            header.textLabel?.textAlignment = .center
+            header.textLabel?.numberOfLines = 1
+            header.textLabel?.font = UIFont.systemFont(ofSize: 20, weight: .light)
+        }
+    }
+    
+    // Rows
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let rows = viewModel.documentsCategories[section].items.count

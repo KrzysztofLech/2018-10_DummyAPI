@@ -53,9 +53,25 @@ class DetailViewController: UIViewController {
     //MARK: - Other Methods
     
     private func downloadData() {
-        viewModel.getDocumentDetails(id: document.id) { [weak self] in
-            self?.mainActivityIndicator.stopAnimating()
-            self?.updateView()
+        if ReachabilityManager.shared.isReachable() {
+            
+            viewModel.getDocumentDetails(id: document.id) { [weak self] in
+                self?.mainActivityIndicator.stopAnimating()
+                self?.updateView()
+            }
+            
+        } else {
+            
+            alertWithTwoButtons(title: "Internet is no available!",
+                                message: "What do you want to do?",
+                                leftButtonTitle: "Try again",
+                                rightButtonTitle: "Back to list",
+                                leftButtonCompletion: { (_) in
+                                    self.downloadData()
+            },
+                                rightButtonCompletion: { (_) in
+                                    self.navigationController?.popViewController(animated: true)
+            })
         }
     }
     

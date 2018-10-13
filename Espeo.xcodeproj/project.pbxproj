@@ -20,6 +20,9 @@
 		6BC5FE672171D8A200C7FE05 /* UIViewController+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE662171D8A200C7FE05 /* UIViewController+extensions.swift */; };
 		6BC5FE692171E0F700C7FE05 /* DocumentDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE682171E0F700C7FE05 /* DocumentDetailsViewModel.swift */; };
 		6BC5FE6B217201C000C7FE05 /* String+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE6A217201C000C7FE05 /* String+extensions.swift */; };
+		6BC5FE6D2172376B00C7FE05 /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE6C2172376B00C7FE05 /* ReachabilityManager.swift */; };
+		6BC5FE6F217238D000C7FE05 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE6E217238D000C7FE05 /* Alerts.swift */; };
+		6BC5FE71217238FD00C7FE05 /* UIApplication+extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5FE70217238FD00C7FE05 /* UIApplication+extensions.swift */; };
 		6BFD5E0C2170CED400611E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0B2170CED400611E7C /* AppDelegate.swift */; };
 		6BFD5E112170CED400611E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E0F2170CED400611E7C /* Main.storyboard */; };
 		6BFD5E132170CED600611E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFD5E122170CED600611E7C /* Assets.xcassets */; };
@@ -41,6 +44,9 @@
 		6BC5FE662171D8A200C7FE05 /* UIViewController+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extensions.swift"; sourceTree = "<group>"; };
 		6BC5FE682171E0F700C7FE05 /* DocumentDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentDetailsViewModel.swift; sourceTree = "<group>"; };
 		6BC5FE6A217201C000C7FE05 /* String+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extensions.swift"; sourceTree = "<group>"; };
+		6BC5FE6C2172376B00C7FE05 /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		6BC5FE6E217238D000C7FE05 /* Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alerts.swift; sourceTree = "<group>"; };
+		6BC5FE70217238FD00C7FE05 /* UIApplication+extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+extensions.swift"; sourceTree = "<group>"; };
 		6BFD5E082170CED400611E7C /* Espeo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Espeo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BFD5E0B2170CED400611E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6BFD5E102170CED400611E7C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -112,6 +118,7 @@
 			children = (
 				6BC5FE582170DC7200C7FE05 /* APIService.swift */,
 				6BC5FE642171C04300C7FE05 /* ImageService.swift */,
+				6BC5FE6C2172376B00C7FE05 /* ReachabilityManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -122,6 +129,7 @@
 				6BC5FE602171039E00C7FE05 /* UIView+extensions.swift */,
 				6BC5FE662171D8A200C7FE05 /* UIViewController+extensions.swift */,
 				6BC5FE6A217201C000C7FE05 /* String+extensions.swift */,
+				6BC5FE70217238FD00C7FE05 /* UIApplication+extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 		6BC5FE512170D6D300C7FE05 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				6BC5FE6E217238D000C7FE05 /* Alerts.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -300,6 +309,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC5FE6D2172376B00C7FE05 /* ReachabilityManager.swift in Sources */,
 				6BC5FE672171D8A200C7FE05 /* UIViewController+extensions.swift in Sources */,
 				6BC5FE572170D8EB00C7FE05 /* DataModel.swift in Sources */,
 				6BC5FE592170DC7200C7FE05 /* APIService.swift in Sources */,
@@ -309,8 +319,10 @@
 				6BC5FE532170D7CF00C7FE05 /* ListViewController.swift in Sources */,
 				6BFD5E0C2170CED400611E7C /* AppDelegate.swift in Sources */,
 				6BC5FE692171E0F700C7FE05 /* DocumentDetailsViewModel.swift in Sources */,
+				6BC5FE71217238FD00C7FE05 /* UIApplication+extensions.swift in Sources */,
 				6BC5FE5B2170DF6600C7FE05 /* DocumentViewModel.swift in Sources */,
 				6BC5FE612171039E00C7FE05 /* UIView+extensions.swift in Sources */,
+				6BC5FE6F217238D000C7FE05 /* Alerts.swift in Sources */,
 				6BC5FE5E217100E700C7FE05 /* DocumentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

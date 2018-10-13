@@ -29,7 +29,7 @@ class ListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
-        initViewModel()
+        downloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,12 +45,21 @@ class ListViewController: UIViewController {
         tableView.backgroundView = noDataView
     }
     
-    private func initViewModel() {
-        viewModel.getDocuments { [weak self] in
-            let documentsCount = self?.viewModel.documentsCount ?? 0
-            self?.tableView.backgroundView = documentsCount > 0 ? nil : self?.noDataView
-            self?.tableView.reloadData()
-            self?.documentsCounterLabel.text = String(format: "Documents: %i", documentsCount)
+    private func downloadData() {
+        if ReachabilityManager.shared.isReachable() {
+            
+            viewModel.getDocuments { [weak self] in
+                let documentsCount = self?.viewModel.documentsCount ?? 0
+                self?.tableView.backgroundView = documentsCount > 0 ? nil : self?.noDataView
+                self?.tableView.reloadData()
+                self?.documentsCounterLabel.text = String(format: "Documents: %i", documentsCount)
+            }
+            
+        } else {
+            
+            internetNotAvailableAlert { [weak self] (_) in
+                self?.downloadData()
+            }
         }
     }
 }

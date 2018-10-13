@@ -12,6 +12,7 @@ import Alamofire
 struct APIService {
     
     private let documentsUrl = "http://localhost:8080/api/v1/documents"
+    //private let documentsUrl = "http://192.168.0.206:8080/api/v1/documents"
     
     func getDocuments(closure: @escaping (_ data: [Document]) -> ()) {
         guard let endPointUrl = URL(string: documentsUrl) else {

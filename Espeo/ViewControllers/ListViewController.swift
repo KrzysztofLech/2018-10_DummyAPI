@@ -69,9 +69,8 @@ extension ListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTableViewCell.toString(),
                                                        for: indexPath) as? DocumentTableViewCell else { return UITableViewCell() }
-        
-        // konfigurujemy celkę
-        
+        let document = viewModel.documentsCategories[indexPath.section].items[indexPath.row]
+        cell.titleLabel.text = document.title
         return cell
     }
 }

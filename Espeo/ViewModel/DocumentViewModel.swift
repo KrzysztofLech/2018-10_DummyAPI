@@ -39,8 +39,11 @@ class DocumentViewModel {
     func getDocuments(completion: @escaping Completion) {
         apiService.getDocuments { [weak self] (documents) in
             self?.documents = documents
-            self?.divideDocumentsDataIntoCategories()
             print("Downloaded: \(self?.documents.count ?? 0) documents")
+            print(documents)
+            
+            self?.divideDocumentsDataIntoCategories()
+            
             DispatchQueue.main.async {
                 completion()
             }

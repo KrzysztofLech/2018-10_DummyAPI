@@ -16,5 +16,17 @@ class DocumentTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        resetCell()
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        resetCell()
+    }
+    
+    private func resetCell() {
+        thumbnailImageView.image = nil
+        titleLabel.text = nil
+        activityIndicator.startAnimating()
     }
 }

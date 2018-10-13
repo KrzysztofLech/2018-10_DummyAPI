@@ -90,11 +90,15 @@
         <!--Detail View Controller-->
         <scene sceneID="HB5-z4-pZL">
             <objects>
-                <viewController id="yan-Ob-Doe" customClass="DetailViewController" customModule="Espeo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="yan-Ob-Doe" customClass="DetailViewController" customModule="Espeo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gsQ-xa-6f9">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BT9-kW-nhR" userLabel="Container View">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="774"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="vQh-Um-hrp">
                                 <rect key="frame" x="188.5" y="385.5" width="37" height="37"/>
                             </activityIndicatorView>
@@ -102,7 +106,11 @@
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vQh-Um-hrp" firstAttribute="centerX" secondItem="gsQ-xa-6f9" secondAttribute="centerX" id="3kn-GL-Dvj"/>
+                            <constraint firstItem="BT9-kW-nhR" firstAttribute="top" secondItem="M3o-xc-Fbf" secondAttribute="top" id="Kkz-vN-DfC"/>
+                            <constraint firstItem="BT9-kW-nhR" firstAttribute="leading" secondItem="gsQ-xa-6f9" secondAttribute="leading" id="Scw-yc-5sz"/>
                             <constraint firstItem="vQh-Um-hrp" firstAttribute="centerY" secondItem="gsQ-xa-6f9" secondAttribute="centerY" id="XA8-cY-QDw"/>
+                            <constraint firstItem="M3o-xc-Fbf" firstAttribute="bottom" secondItem="BT9-kW-nhR" secondAttribute="bottom" id="aaI-s2-M7K"/>
+                            <constraint firstAttribute="trailing" secondItem="BT9-kW-nhR" secondAttribute="trailing" id="hlL-vu-Wpo"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="M3o-xc-Fbf"/>
                     </view>

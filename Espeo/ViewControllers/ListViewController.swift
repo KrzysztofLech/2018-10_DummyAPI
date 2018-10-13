@@ -113,6 +113,8 @@ extension ListViewController: UITableViewDataSource {
 extension ListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "DetailsSegue", sender: nil)
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: DetailViewController.toString()) as? DetailViewController else { return }
+        vc.document = viewModel.documentsCategories[indexPath.section].items[indexPath.row]
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

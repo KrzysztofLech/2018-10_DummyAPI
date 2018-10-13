@@ -17,11 +17,13 @@ class DetailViewController: UIViewController {
     
     //MARK: - Properties
     
+    var document: Document!
     
     //MARK: - Life Cycles Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = document.title
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -70,7 +70,15 @@ extension ListViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DocumentTableViewCell.toString(),
                                                        for: indexPath) as? DocumentTableViewCell else { return UITableViewCell() }
         let document = viewModel.documentsCategories[indexPath.section].items[indexPath.row]
-        cell.titleLabel.text = document.title
+        cell.update(withData: document)
+        
+        ImageService.downloadImage(withUrl: document.thumbnail) { (image) in
+            if cell.thumbnailURL == document.thumbnail {
+                cell.activityIndicator.stopAnimating()
+                cell.thumbnailImageView.image = image
+            }
+        }
+        
         return cell
     }
 }

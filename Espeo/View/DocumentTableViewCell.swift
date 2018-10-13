@@ -14,6 +14,8 @@ class DocumentTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    var thumbnailURL: String = ""
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         resetCell()
@@ -28,5 +30,10 @@ class DocumentTableViewCell: UITableViewCell {
         thumbnailImageView.image = nil
         titleLabel.text = nil
         activityIndicator.startAnimating()
+    }
+    
+    func update(withData document: Document) {
+        titleLabel.text = document.title
+        thumbnailURL = document.thumbnail
     }
 }

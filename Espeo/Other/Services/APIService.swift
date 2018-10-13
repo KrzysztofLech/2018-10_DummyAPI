@@ -32,4 +32,25 @@ struct APIService {
                 }
         }
     }
+    
+    func getDocumentDetails(id: Int, closure: @escaping (_ data: DocumentDetails) -> ()) {
+        let urlString = String(format: "%@/%i", documentsUrl, id)
+        guard let endPointUrl = URL(string: urlString) else {
+            print("Error: Cannot create URL")
+            return
+        }
+        
+        Alamofire.request(endPointUrl)
+            .responseData { (dataResponse) in
+                guard let data = dataResponse.data else { return }
+                
+                let decoder = JSONDecoder()
+                do {
+                    let apiData = try decoder.decode(DocumentDetails.self, from: data)
+                    closure(apiData)
+                } catch {
+                    print("Decode error: ", error)
+                }
+        }
+    }
 }

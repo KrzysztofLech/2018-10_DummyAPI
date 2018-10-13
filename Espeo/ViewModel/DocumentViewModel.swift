@@ -69,5 +69,9 @@ class DocumentViewModel {
             documentsCategories.append(docCategory)
             print(categoryDocs.count, categoryName)
         }
+        
+        documentsCategories = documentsCategories.sorted { (doc1, doc2) -> Bool in
+            return doc1.name < doc2.name
+        }
     }
 }

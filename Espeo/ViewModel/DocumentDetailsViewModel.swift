@@ -13,11 +13,46 @@ class DocumentDetailsViewModel {
     // MARK: - Private Properties
     
     private let apiService: APIService
-     var documentDetails: DocumentDetails?
+    private var documentDetails: DocumentDetails?
     
     
     // MARK: - Public Properties
     
+    var imageURL: String {
+        return documentDetails?.imageURL ?? ""
+    }
+    
+    var title: String {
+        return documentDetails?.title ?? ""
+    }
+    
+    var author: String {
+        return documentDetails?.author ?? ""
+    }
+    
+    var category: String {
+        return documentDetails?.category ?? ""
+    }
+    
+    var created: String {
+        // 2018-10-12T13:49:24.119590
+        let documentCreated = documentDetails?.created ?? ""
+        let time = String(documentCreated.prefix(10))
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        if let date = dateFormatter.date(from: time) {
+            dateFormatter.dateFormat = "yyyy.MM.dd"
+            let formattedDate = dateFormatter.string(from: date)
+            return formattedDate
+        }
+        return " "
+    }
+    
+    var text: String {
+        return documentDetails?.text ?? ""
+    }
 
     // MARK: - Init
     
@@ -38,5 +73,4 @@ class DocumentDetailsViewModel {
             }
         }
     }
-    
 }

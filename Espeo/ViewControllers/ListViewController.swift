@@ -18,7 +18,7 @@ class ListViewController: UIViewController {
     
     
     //MARK: - Properties
-    
+    override var prefersHomeIndicatorAutoHidden : Bool { return true }
     private lazy var viewModel: DocumentViewModel = {
         return DocumentViewModel(apiService: APIService())
     }()

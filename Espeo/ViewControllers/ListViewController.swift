@@ -13,6 +13,7 @@ class ListViewController: UIViewController {
     //MARK: - Outlets
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet var noDataView: UIView!
     @IBOutlet weak var documentsCounterLabel: UILabel!
     
     
@@ -27,20 +28,25 @@ class ListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setupTableView()
         initViewModel()
-        
-        tableView.register(UINib(nibName: DocumentTableViewCell.toString(), bundle: nil),
-                           forCellReuseIdentifier: DocumentTableViewCell.toString())
     }
     
     
     //MARK: - Other Methods
     
+    private func setupTableView() {
+        tableView.register(UINib(nibName: DocumentTableViewCell.toString(), bundle: nil),
+                           forCellReuseIdentifier: DocumentTableViewCell.toString())
+        tableView.backgroundView = noDataView
+    }
+    
     private func initViewModel() {
         viewModel.getDocuments { [weak self] in
+            let documentsCount = self?.viewModel.documentsCount ?? 0
+            self?.tableView.backgroundView = documentsCount > 0 ? nil : self?.noDataView
             self?.tableView.reloadData()
-            self?.documentsCounterLabel.text = String(format: "Documents: %i", self?.viewModel.documentsCount ?? 0)
+            self?.documentsCounterLabel.text = String(format: "Documents: %i", documentsCount)
         }
     }
 }

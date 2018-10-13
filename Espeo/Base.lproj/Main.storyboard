@@ -49,10 +49,39 @@
                     </view>
                     <connections>
                         <outlet property="documentsCounterLabel" destination="WI0-fY-eKq" id="jXd-G9-hSH"/>
+                        <outlet property="noDataView" destination="V5N-Mc-oCF" id="vbG-GB-gUr"/>
                         <outlet property="tableView" destination="tKK-TU-PzV" id="5hE-8t-opB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="V5N-Mc-oCF" userLabel="NoData View">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sCq-pa-HdV">
+                            <rect key="frame" x="0.0" y="28.5" width="240" height="71"/>
+                            <subviews>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-SM-ycO">
+                                    <rect key="frame" x="101.5" y="0.0" width="37" height="37"/>
+                                </activityIndicatorView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Data" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc8-rm-Qww">
+                                    <rect key="frame" x="87" y="47" width="66.5" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="20"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="et3-37-HDK" firstAttribute="trailing" secondItem="sCq-pa-HdV" secondAttribute="trailing" id="4VT-ni-Bef"/>
+                        <constraint firstItem="sCq-pa-HdV" firstAttribute="leading" secondItem="et3-37-HDK" secondAttribute="leading" id="hkd-Ni-txh"/>
+                        <constraint firstItem="sCq-pa-HdV" firstAttribute="centerY" secondItem="V5N-Mc-oCF" secondAttribute="centerY" id="i6t-MS-40K"/>
+                        <constraint firstItem="sCq-pa-HdV" firstAttribute="centerX" secondItem="V5N-Mc-oCF" secondAttribute="centerX" id="kSg-rY-UKt"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="et3-37-HDK"/>
+                </view>
             </objects>
         </scene>
     </scenes>

@@ -37,12 +37,11 @@ class DocumentDetailsViewModel {
     var created: String {
         // 2018-10-12T13:49:24.119590
         let documentCreated = documentDetails?.created ?? ""
-        let time = String(documentCreated.prefix(10))
         
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSS"
         
-        if let date = dateFormatter.date(from: time) {
+        if let date = dateFormatter.date(from: documentCreated) {
             dateFormatter.dateFormat = "yyyy.MM.dd"
             let formattedDate = dateFormatter.string(from: date)
             return formattedDate

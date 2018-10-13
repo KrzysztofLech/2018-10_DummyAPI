@@ -12,6 +12,8 @@ class DetailViewController: UIViewController {
     
     //MARK: - Outlets
 
+    @IBOutlet private weak var contentView: UIView!
+    
     @IBOutlet private weak var mainActivityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var imageActivityIndicator: UIActivityIndicatorView!
     
@@ -22,6 +24,7 @@ class DetailViewController: UIViewController {
     @IBOutlet private weak var categoryLabel: UILabel!
     @IBOutlet private weak var createdLabel: UILabel!
     @IBOutlet private weak var textLabel: UILabel!
+    
     
     //MARK: - Properties
     
@@ -35,15 +38,15 @@ class DetailViewController: UIViewController {
     
     //MARK: - Life Cycles Methods
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        title = "Document details"
-        downloadData()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
+        contentView.alpha = 0.0
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        downloadData()
     }
 
     
@@ -67,5 +70,9 @@ class DetailViewController: UIViewController {
             self?.imageActivityIndicator.stopAnimating()
             self?.imageView.image = image
         }
+        
+        UIView.animate(withDuration: 0.5, animations: { [weak self] in
+            self?.contentView.alpha = 1.0
+        })
     }
 }

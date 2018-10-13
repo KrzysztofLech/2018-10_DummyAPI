@@ -32,6 +32,10 @@ class ListViewController: UIViewController {
         initViewModel()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
     
     //MARK: - Other Methods
     
@@ -108,4 +112,7 @@ extension ListViewController: UITableViewDataSource {
 
 extension ListViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "DetailsSegue", sender: nil)
+    }
 }

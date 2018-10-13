@@ -9,8 +9,28 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    //MARK: - Outlets
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    
+    //MARK: - Properties
+    
+    
+    //MARK: - Life Cycles Methods
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: false)
+    }
+
+    
+    //MARK: - Other Methods
+    
+    
 }

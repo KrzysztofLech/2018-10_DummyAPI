@@ -18,12 +18,17 @@ class DetailViewController: UIViewController {
     //MARK: - Properties
     
     var document: Document!
+    private lazy var viewModel: DocumentDetailsViewModel = {
+        return DocumentDetailsViewModel(apiService: APIService())
+    }()
+    
     
     //MARK: - Life Cycles Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = document.title
+        title = "Document details"
+        initViewModel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -34,5 +39,9 @@ class DetailViewController: UIViewController {
     
     //MARK: - Other Methods
     
-    
+    private func initViewModel() {
+        viewModel.getDocumentDetails(id: document.id) { [weak self] in
+            self?.activityIndicator.stopAnimating()
+        }
+    }
 }
